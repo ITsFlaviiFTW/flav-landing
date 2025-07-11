@@ -12,7 +12,7 @@ export default function Page() {
         <div className="container flex h-14 items-center">
           <div className="mr-4 hidden md:flex">
             <Link className="mr-6 flex items-center space-x-2" href="/">
-              <span className="hidden font-bold sm:inline-block">John.dev</span>
+              <span className="hidden font-bold sm:inline-block">flavstudios.dev</span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
               <Link href="#about" className="transition-colors hover:text-foreground/80">
@@ -127,7 +127,7 @@ export default function Page() {
 
       <footer className="border-t">
         <div className="container flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
-          <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 John.dev. All rights reserved.</p>
+          <p className="text-xs text-gray-500 dark:text-gray-400">© 2025 flavstudios.dev. All rights reserved.</p>
           <nav className="sm:ml-auto flex gap-4 sm:gap-6">
             <Link className="text-xs hover:underline underline-offset-4" href="#">
               Terms of Service
