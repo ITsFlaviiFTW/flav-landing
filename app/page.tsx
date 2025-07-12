@@ -16,7 +16,7 @@ export default function Page() {
           <div className="mr-4 hidden md:flex">
             <Link className="mr-6 flex items-center space-x-2" href="/">
               <span className="hidden font-bold sm:inline-block bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                John.dev
+                flavstudios.dev
               </span>
             </Link>
             <nav className="flex items-center space-x-6 text-sm font-medium">
@@ -83,16 +83,6 @@ export default function Page() {
                   >
                     <Linkedin className="h-4 w-4" />
                     <span className="sr-only">LinkedIn</span>
-                  </Button>
-                </Link>
-                <Link href="https://twitter.com" target="_blank">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="hover:scale-110 hover:rotate-12 transform transition-all duration-300 bg-transparent"
-                  >
-                    <Twitter className="h-4 w-4" />
-                    <span className="sr-only">Twitter</span>
                   </Button>
                 </Link>
                 <Link href="mailto:hello@example.com">
