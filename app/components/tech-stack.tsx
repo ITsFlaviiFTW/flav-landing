@@ -1,38 +1,106 @@
+"use client"
+
 import { Card } from "@/components/ui/card"
+import { useState } from "react"
 
 const technologies = [
   {
     category: "Frontend",
-    skills: ["React", "Next.js", "TypeScript", "TailwindCSS", "Redux", "GraphQL"],
+    skills: [
+      { name: "React", level: 90 },
+      { name: "Next.js", level: 85 },
+      { name: "TypeScript", level: 88 },
+      { name: "TailwindCSS", level: 92 },
+      { name: "Redux", level: 80 },
+      { name: "GraphQL", level: 75 },
+    ],
+    color: "from-blue-500 to-cyan-500",
   },
   {
     category: "Backend",
-    skills: ["Node.js", "Express", "Python", "Django", "PostgreSQL", "MongoDB"],
+    skills: [
+      { name: "Node.js", level: 85 },
+      { name: "Express", level: 80 },
+      { name: "Python", level: 78 },
+      { name: "Django", level: 70 },
+      { name: "PostgreSQL", level: 82 },
+      { name: "MongoDB", level: 75 },
+    ],
+    color: "from-green-500 to-emerald-500",
   },
   {
     category: "DevOps",
-    skills: ["Docker", "AWS", "CI/CD", "Git", "Linux", "Nginx"],
+    skills: [
+      { name: "Docker", level: 75 },
+      { name: "AWS", level: 70 },
+      { name: "CI/CD", level: 80 },
+      { name: "Git", level: 95 },
+      { name: "Linux", level: 85 },
+      { name: "Nginx", level: 65 },
+    ],
+    color: "from-purple-500 to-pink-500",
   },
   {
     category: "Tools",
-    skills: ["VS Code", "Postman", "Figma", "Jest", "GitHub", "Vercel"],
+    skills: [
+      { name: "VS Code", level: 95 },
+      { name: "Postman", level: 88 },
+      { name: "Figma", level: 70 },
+      { name: "Jest", level: 80 },
+      { name: "GitHub", level: 90 },
+      { name: "Vercel", level: 85 },
+    ],
+    color: "from-orange-500 to-red-500",
   },
 ]
 
+interface SkillBarProps {
+  skill: { name: string; level: number }
+  color: string
+  index: number
+}
+
+function SkillBar({ skill, color, index }: SkillBarProps) {
+  const [isVisible, setIsVisible] = useState(false)
+
+  return (
+    <div className="mb-4 group" onMouseEnter={() => setIsVisible(true)} style={{ animationDelay: `${index * 0.1}s` }}>
+      <div className="flex justify-between items-center mb-2">
+        <span className="text-sm font-medium group-hover:text-blue-600 transition-colors duration-200">
+          {skill.name}
+        </span>
+        <span className="text-xs text-muted-foreground">{skill.level}%</span>
+      </div>
+      <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2 overflow-hidden">
+        <div
+          className={`h-2 bg-gradient-to-r ${color} rounded-full transition-all duration-1000 ease-out transform origin-left`}
+          style={{
+            width: isVisible ? `${skill.level}%` : "0%",
+            transform: isVisible ? "scaleX(1)" : "scaleX(0)",
+          }}
+        />
+      </div>
+    </div>
+  )
+}
+
 export default function TechStack() {
   return (
-    <div className="grid gap-6 md:grid-cols-2">
-      {technologies.map((tech) => (
-        <Card key={tech.category} className="p-6">
-          <h3 className="text-lg font-semibold mb-4">{tech.category}</h3>
-          <div className="flex flex-wrap gap-2">
-            {tech.skills.map((skill) => (
-              <span
-                key={skill}
-                className="inline-flex items-center rounded-md bg-primary/10 px-2 py-1 text-sm font-medium text-primary ring-1 ring-inset ring-primary/20"
-              >
-                {skill}
-              </span>
+    <div className="grid gap-8 md:grid-cols-2">
+      {technologies.map((tech, techIndex) => (
+        <Card
+          key={tech.category}
+          className="p-6 hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800"
+        >
+          <div className="flex items-center mb-6">
+            <h3 className={`text-lg font-semibold bg-gradient-to-r ${tech.color} bg-clip-text text-transparent`}>
+              {tech.category}
+            </h3>
+            <div className={`ml-auto w-3 h-3 rounded-full bg-gradient-to-r ${tech.color} animate-pulse`}></div>
+          </div>
+          <div>
+            {tech.skills.map((skill, skillIndex) => (
+              <SkillBar key={skill.name} skill={skill} color={tech.color} index={skillIndex} />
             ))}
           </div>
         </Card>
