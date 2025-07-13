@@ -48,7 +48,7 @@ export default function ProjectCard({
   }
 
   return (
-    <Card className="overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 border-0 bg-gradient-to-br from-white to-gray-50 dark:from-gray-900 dark:to-gray-800">
+    <Card className="overflow-hidden group hover:shadow-2xl hover:shadow-blue-500/10 transition-all duration-500 hover:-translate-y-2 border-0 bg-white/5 backdrop-blur-sm">
       <ProjectDetailModal project={projectData}>
         <div className="relative aspect-video overflow-hidden cursor-pointer">
           <Image
@@ -68,17 +68,17 @@ export default function ProjectCard({
 
       <CardContent className="p-6">
         <ProjectDetailModal project={projectData}>
-          <h3 className="font-semibold text-xl mb-2 group-hover:text-blue-600 transition-colors duration-300 cursor-pointer">
+          <h3 className="font-semibold text-xl mb-2 text-white group-hover:text-blue-400 transition-colors duration-300 cursor-pointer">
             {title}
           </h3>
         </ProjectDetailModal>
-        <p className="text-sm text-muted-foreground mb-4 line-clamp-2">{description}</p>
+        <p className="text-sm text-white/70 mb-4 line-clamp-2">{description}</p>
 
         <div className="flex flex-wrap gap-2 mb-4">
           {tags.map((tag, index) => (
             <span
               key={tag}
-              className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 px-3 py-1 text-xs font-medium text-blue-800 dark:text-blue-200 ring-1 ring-inset ring-blue-500/20 hover:scale-105 transition-transform duration-200"
+              className="inline-flex items-center gap-1 rounded-full bg-gradient-to-r from-blue-500/10 to-purple-500/10 border border-blue-500/20 px-3 py-1 text-xs font-medium text-blue-300 hover:scale-105 transition-transform duration-200"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <TechIcon name={tag} className="h-3 w-3" />
@@ -91,7 +91,12 @@ export default function ProjectCard({
       </CardContent>
 
       <CardFooter className="p-6 pt-0 flex gap-2">
-        <Button variant="outline" size="sm" asChild className="flex-1 bg-transparent">
+        <Button
+          variant="outline"
+          size="sm"
+          asChild
+          className="flex-1 bg-white/5 border-white/10 text-white hover:bg-white/10"
+        >
           <a href={githubUrl} target="_blank" rel="noopener noreferrer">
             <Github className="h-4 w-4 mr-2" />
             Code
@@ -100,7 +105,10 @@ export default function ProjectCard({
 
         {demoUrl && (
           <DemoModal title={title} demoUrl={demoUrl}>
-            <Button size="sm" className="flex-1">
+            <Button
+              size="sm"
+              className="flex-1 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600"
+            >
               <ExternalLink className="h-4 w-4 mr-2" />
               Demo
             </Button>

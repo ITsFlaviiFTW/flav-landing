@@ -13,9 +13,9 @@ export default function Page() {
   const projects = [
     {
       title: "Job Tracker Platform",
-      description: "A comprehensive job application tracking system built with Django and React.",
+      description: "A comprehensive job application tracking system built with Django.",
       longDescription:
-        "A full-featured job application tracking platform that helps users manage their job search process. Built with Django REST API backend and React frontend, featuring real-time updates, analytics, and team collaboration.",
+        "A full-featured job application tracking platform that helps users manage their job search process. Built with Django, featuring real-time updates and analytics.",
       image: "/placeholder.svg?height=400&width=600",
       screenshots: ["/placeholder.svg?height=300&width=500", "/placeholder.svg?height=300&width=500"],
       githubUrl: "https://github.com/flavstudios/job-tracker",
@@ -78,32 +78,23 @@ export default function Page() {
   ]
 
   return (
-    <div className="min-h-screen bg-background overflow-x-hidden">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 overflow-x-hidden">
+      <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-black/30 backdrop-blur supports-[backdrop-filter]:bg-black/30">
         <div className="container mx-auto flex h-14 items-center px-4">
           <div className="mr-4 flex">
             <Link className="mr-6 flex items-center space-x-2" href="/">
-              <span className="font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
                 flavstudios.dev
               </span>
             </Link>
             <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-              <Link
-                href="#about"
-                className="transition-colors hover:text-foreground/80 hover:scale-105 transform duration-200"
-              >
+              <Link href="#about" className="text-white/80 hover:text-white hover:scale-105 transform duration-200">
                 About
               </Link>
-              <Link
-                href="#projects"
-                className="transition-colors hover:text-foreground/80 hover:scale-105 transform duration-200"
-              >
+              <Link href="#projects" className="text-white/80 hover:text-white hover:scale-105 transform duration-200">
                 Projects
               </Link>
-              <Link
-                href="#contact"
-                className="transition-colors hover:text-foreground/80 hover:scale-105 transform duration-200"
-              >
+              <Link href="#contact" className="text-white/80 hover:text-white hover:scale-105 transform duration-200">
                 Contact
               </Link>
             </nav>
@@ -112,7 +103,7 @@ export default function Page() {
             <ThemeToggle />
             <Button
               variant="outline"
-              className="hidden sm:inline-flex hover:scale-105 transform transition-all duration-200 bg-transparent"
+              className="hidden sm:inline-flex hover:scale-105 transform transition-all duration-200 bg-white/5 border-white/10 text-white hover:bg-white/10"
             >
               Resume
             </Button>
@@ -124,14 +115,13 @@ export default function Page() {
       <main className="container mx-auto px-4 md:px-6 relative">
         <FloatingElements />
         <section id="about" className="relative py-12 md:py-24 lg:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-50 via-transparent to-purple-50 dark:from-blue-950/20 dark:to-purple-950/20"></div>
           <div className="container mx-auto px-4 md:px-6 relative">
             <div className="flex flex-col items-center justify-center space-y-4 text-center max-w-4xl mx-auto">
               <div className="space-y-2">
-                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none bg-gradient-to-r from-blue-600 via-purple-600 to-blue-800 bg-clip-text text-transparent animate-pulse">
+                <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none bg-gradient-to-r from-blue-400 via-purple-400 to-blue-400 bg-clip-text text-transparent animate-pulse">
                   Full Stack Developer
                 </h1>
-                <p className="mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400 animate-fade-in">
+                <p className="mx-auto max-w-[700px] text-white/70 md:text-xl animate-fade-in">
                   Building digital experiences with modern technologies. Focused on creating elegant solutions to
                   complex problems.
                 </p>
@@ -141,7 +131,7 @@ export default function Page() {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="hover:scale-110 hover:rotate-12 transform transition-all duration-300 bg-transparent"
+                    className="hover:scale-110 hover:rotate-12 transform transition-all duration-300 bg-white/5 border-white/10 text-white hover:bg-white/10"
                   >
                     <Github className="h-4 w-4" />
                     <span className="sr-only">GitHub</span>
@@ -151,7 +141,7 @@ export default function Page() {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="hover:scale-110 hover:rotate-12 transform transition-all duration-300 bg-transparent"
+                    className="hover:scale-110 hover:rotate-12 transform transition-all duration-300 bg-white/5 border-white/10 text-white hover:bg-white/10"
                   >
                     <Linkedin className="h-4 w-4" />
                     <span className="sr-only">LinkedIn</span>
@@ -161,7 +151,7 @@ export default function Page() {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="hover:scale-110 hover:rotate-12 transform transition-all duration-300 bg-transparent"
+                    className="hover:scale-110 hover:rotate-12 transform transition-all duration-300 bg-white/5 border-white/10 text-white hover:bg-white/10"
                   >
                     <Twitter className="h-4 w-4" />
                     <span className="sr-only">Twitter</span>
@@ -171,7 +161,7 @@ export default function Page() {
                   <Button
                     variant="outline"
                     size="icon"
-                    className="hover:scale-110 hover:rotate-12 transform transition-all duration-300 bg-transparent"
+                    className="hover:scale-110 hover:rotate-12 transform transition-all duration-300 bg-white/5 border-white/10 text-white hover:bg-white/10"
                   >
                     <Mail className="h-4 w-4" />
                     <span className="sr-only">Email</span>
@@ -184,7 +174,7 @@ export default function Page() {
 
         <section id="projects" className="py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
               Featured Projects
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
@@ -197,7 +187,7 @@ export default function Page() {
 
         <section className="py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
-            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-green-400 to-blue-400 bg-clip-text text-transparent">
               Tech Stack
             </h2>
             <div className="max-w-6xl mx-auto">
@@ -213,7 +203,7 @@ export default function Page() {
         <section id="contact" className="py-12 md:py-24 lg:py-32">
           <div className="container mx-auto px-4 md:px-6">
             <div className="mx-auto max-w-2xl">
-              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-12 text-center bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 Get in Touch
               </h2>
               <ContactForm />
@@ -222,14 +212,14 @@ export default function Page() {
         </section>
       </main>
 
-      <footer className="border-t">
+      <footer className="border-t border-white/5 bg-black/20">
         <div className="container mx-auto flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
-          <p className="text-xs text-gray-500 dark:text-gray-400">© 2024 flavstudios.dev. All rights reserved.</p>
+          <p className="text-xs text-white/60">© 2024 flavstudios.dev. All rights reserved.</p>
           <nav className="sm:ml-auto flex gap-4 sm:gap-6">
-            <Link className="text-xs hover:underline underline-offset-4" href="#">
+            <Link className="text-xs hover:underline underline-offset-4 text-white/60 hover:text-white/80" href="#">
               Terms of Service
             </Link>
-            <Link className="text-xs hover:underline underline-offset-4" href="#">
+            <Link className="text-xs hover:underline underline-offset-4 text-white/60 hover:text-white/80" href="#">
               Privacy
             </Link>
           </nav>
