@@ -2,6 +2,7 @@
 
 import { Card } from "@/components/ui/card"
 import { useState } from "react"
+import TechIcon from "./tech-icon"
 
 const technologies = [
   {
@@ -33,7 +34,6 @@ const technologies = [
     skills: [
       { name: "Docker", level: 75 },
       { name: "AWS", level: 70 },
-      { name: "CI/CD", level: 80 },
       { name: "Git", level: 95 },
       { name: "Linux", level: 85 },
       { name: "Nginx", level: 65 },
@@ -66,7 +66,8 @@ function SkillBar({ skill, color, index }: SkillBarProps) {
   return (
     <div className="mb-4 group" onMouseEnter={() => setIsVisible(true)} style={{ animationDelay: `${index * 0.1}s` }}>
       <div className="flex justify-between items-center mb-2">
-        <span className="text-sm font-medium group-hover:text-blue-600 transition-colors duration-200">
+        <span className="text-sm font-medium group-hover:text-blue-600 transition-colors duration-200 flex items-center gap-2">
+          <TechIcon name={skill.name} className="h-4 w-4" />
           {skill.name}
         </span>
         <span className="text-xs text-muted-foreground">{skill.level}%</span>
