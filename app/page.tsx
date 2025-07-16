@@ -3,6 +3,7 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react"
 import Link from "next/link"
 import ContactForm from "./components/contact-form"
 import ProjectCard from "./components/project-card"
+import ComingSoonCard from "./components/coming-soon-card"
 import TechStack from "./components/tech-stack"
 import { ThemeToggle } from "@/components/theme-toggle"
 import FloatingElements from "./components/floating-elements"
@@ -10,70 +11,73 @@ import StatsSection from "./components/stats-section"
 import MobileNav from "./components/mobile-nav"
 
 export default function Page() {
-  const projects = [
+  const featuredProject = {
+    title: "Job Tracker Platform",
+    description: "A comprehensive job application tracking system built with Django.",
+    longDescription:
+      "A full-featured job application tracking platform that helps users manage their job search process. Built with Django, featuring real-time updates and analytics.",
+    image: "/placeholder.svg?height=400&width=600",
+    screenshots: ["/placeholder.svg?height=300&width=500", "/placeholder.svg?height=300&width=500"],
+    githubUrl: "https://github.com/itsflaviiftw/job-tracker",
+    demoUrl: "https://demo-jobtracker.flavstudios.dev",
+    websiteUrl: "https://jobtracker.flavstudios.dev",
+    tags: ["Django", "MySQL", "TailwindCSS"],
+    challenges: [
+      "Implementing real-time notifications with WebSockets",
+      "Designing a scalable database schema for complex job data",
+      "Creating responsive charts and analytics dashboard",
+    ],
+    learnings: [
+      "Advanced Django REST framework patterns",
+      "Real-time data synchronization techniques",
+      "User experience design for productivity apps",
+    ],
+  }
+
+  const comingSoonProjects = [
     {
-      title: "Job Tracker Platform",
-      description: "A comprehensive job application tracking system built with Django.",
+      title: "Language Learning App",
+      description: "An interactive language learning platform with gamified lessons and progress tracking.",
       longDescription:
-        "A full-featured job application tracking platform that helps users manage their job search process. Built with Django, featuring real-time updates and analytics.",
+        "A comprehensive language learning application featuring interactive lessons, vocabulary building, pronunciation practice, and progress tracking. Built with Django backend and modern JavaScript frontend with gamification elements.",
       image: "/placeholder.svg?height=400&width=600",
       screenshots: ["/placeholder.svg?height=300&width=500", "/placeholder.svg?height=300&width=500"],
-      githubUrl: "https://github.com/flavstudios/job-tracker",
-      demoUrl: "https://demo-jobtracker.flavstudios.dev",
-      apiPreviewUrl: "https://demo-jobtracker.flavstudios.dev/api/jobs",
-      tags: ["Django", "React", "PostgreSQL", "TailwindCSS"],
+      githubUrl: "https://github.com/itsflaviiftw/language-learning",
+      tags: ["Django", "JavaScript", "TailwindCSS", "MySQL"],
       challenges: [
-        "Implementing real-time notifications with WebSockets",
-        "Designing a scalable database schema for complex job data",
-        "Creating responsive charts and analytics dashboard",
+        "Implementing spaced repetition algorithms for vocabulary retention",
+        "Creating interactive pronunciation assessment features",
+        "Designing gamification systems to maintain user engagement",
       ],
       learnings: [
-        "Advanced Django REST framework patterns",
-        "Real-time data synchronization techniques",
-        "User experience design for productivity apps",
+        "Educational technology design patterns",
+        "Audio processing and speech recognition integration",
+        "User engagement and retention strategies",
       ],
+      isComingSoon: true,
+      expectedDate: "Q3 2025",
     },
     {
-      title: "E-commerce Platform",
-      description: "A full-stack e-commerce platform built with Next.js, Prisma, and Stripe integration.",
+      title: "Real-Time Collaboration Platform",
+      description: "A multi-tenant collaboration platform with real-time document editing and team management.",
       longDescription:
-        "A modern e-commerce solution featuring product management, shopping cart, secure payments, and admin dashboard. Built with Next.js 14, Prisma ORM, and integrated with Stripe for payment processing.",
+        "An advanced collaboration platform featuring real-time document editing, video conferencing, project management, and team analytics. Built with Django Channels for WebSocket support, Redis for caching, and React for the frontend.",
       image: "/placeholder.svg?height=400&width=600",
       screenshots: ["/placeholder.svg?height=300&width=500", "/placeholder.svg?height=300&width=500"],
-      githubUrl: "https://github.com/flavstudios/ecommerce",
-      demoUrl: "https://demo-ecommerce.flavstudios.dev",
-      tags: ["Next.js", "Prisma", "Stripe", "TypeScript"],
+      githubUrl: "https://github.com/itsflaviiftw/collaboration-platform",
+      tags: ["Django", "Django Channels", "Redis", "React", "WebRTC"],
       challenges: [
-        "Implementing secure payment processing",
-        "Managing complex product variants and inventory",
-        "Optimizing performance for large product catalogs",
+        "Implementing operational transformation for real-time editing",
+        "Managing WebSocket connections at scale with Django Channels",
+        "Building secure multi-tenant architecture with row-level security",
       ],
       learnings: [
-        "Payment gateway integration best practices",
-        "Database optimization for e-commerce",
-        "SEO optimization for product pages",
+        "Real-time collaboration algorithms and conflict resolution",
+        "WebSocket scaling and connection management",
+        "Multi-tenant SaaS architecture patterns",
       ],
-    },
-    {
-      title: "AI Chat Interface",
-      description: "An AI-powered chat interface with natural language processing capabilities.",
-      longDescription:
-        "A sophisticated chat application powered by OpenAI's GPT models, featuring conversation memory, custom prompts, and integration with various AI services. Built with modern React patterns and real-time messaging.",
-      image: "/placeholder.svg?height=400&width=600",
-      screenshots: ["/placeholder.svg?height=300&width=500", "/placeholder.svg?height=300&width=500"],
-      githubUrl: "https://github.com/flavstudios/ai-chat",
-      demoUrl: "https://demo-aichat.flavstudios.dev",
-      tags: ["OpenAI", "Next.js", "TailwindCSS", "Socket.io"],
-      challenges: [
-        "Managing conversation context and memory",
-        "Implementing streaming responses for better UX",
-        "Handling rate limits and API costs effectively",
-      ],
-      learnings: [
-        "AI API integration and optimization",
-        "Real-time streaming data handling",
-        "Cost-effective AI application architecture",
-      ],
+      isComingSoon: true,
+      expectedDate: "Q4 2025",
     },
   ]
 
@@ -178,8 +182,9 @@ export default function Page() {
               Featured Projects
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 max-w-7xl mx-auto">
-              {projects.map((project) => (
-                <ProjectCard key={project.title} {...project} />
+              <ProjectCard {...featuredProject} />
+              {comingSoonProjects.map((project) => (
+                <ComingSoonCard key={project.title} {...project} />
               ))}
             </div>
           </div>

@@ -15,6 +15,7 @@ interface ProjectCardProps {
   screenshots: string[]
   githubUrl: string
   demoUrl?: string
+  websiteUrl?: string
   apiPreviewUrl?: string
   tags: string[]
   challenges: string[]
@@ -29,6 +30,7 @@ export default function ProjectCard({
   screenshots,
   githubUrl,
   demoUrl,
+  websiteUrl,
   apiPreviewUrl,
   tags,
   challenges,
@@ -45,6 +47,7 @@ export default function ProjectCard({
     learnings,
     githubUrl,
     demoUrl,
+    websiteUrl,
   }
 
   return (
@@ -114,6 +117,21 @@ export default function ProjectCard({
             </Button>
           </DemoModal>
         )}
+        {/* Visit Site button */}
+        {websiteUrl && (
+          <Button
+            variant="ghost"
+            size="sm"
+            asChild
+            className="flex-1 bg-white/10 text-white hover:bg-white/20"
+            >
+            <a href={websiteUrl} target="_blank" rel="noopener noreferrer">
+              Visit Site
+              </a>
+            </Button>       
+          )}
+
+
       </CardFooter>
     </Card>
   )
