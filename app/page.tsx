@@ -16,8 +16,11 @@ export default function Page() {
     description: "A comprehensive job application tracking system built with Django.",
     longDescription:
       "A full-featured job application tracking platform that helps users manage their job search process. Built with Django, featuring real-time updates and analytics.",
-    image: "/main.png?height=400&width=600",
-    screenshots: ["/dashboard.png?height=300&width=500", "/remote-jobs.png?height=300&width=500"],
+    image: "/projects/job-tracker/main.png?height=400&width=600",
+    screenshots: [
+      "/projects/job-tracker/dashboard.png?height=300&width=500",
+      "/projects/job-tracker/remote-jobs.png?height=300&width=500"
+    ],
     githubUrl: "https://github.com/itsflaviiftw/job-tracker",
     demoUrl: "https://demo-jobtracker.flavstudios.dev",
     websiteUrl: "https://jobtracker.flavstudios.dev",
