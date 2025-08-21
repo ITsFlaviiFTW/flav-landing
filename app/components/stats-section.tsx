@@ -2,9 +2,9 @@ import { Card } from "@/components/ui/card"
 import AnimatedCounter from "./animated-counter"
 
 const stats = [
-  { label: "Projects Completed", value: 10, suffix: "+" },
+  { label: "Projects Completed", value: 5, suffix: "+" },
   { label: "Years Experience", value: 2, suffix: "" },
-  { label: "Technologies Mastered", value: 20, suffix: "+" },
+  { label: "Technologies Mastered", value: 10, suffix: "+" },
 ]
 
 export default function StatsSection() {

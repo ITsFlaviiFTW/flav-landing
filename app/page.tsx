@@ -12,7 +12,7 @@ import MobileNav from "./components/mobile-nav"
 
 export default function Page() {
   const featuredProject = {
-    title: "Job Tracker Platform",
+    title: "Jovira - Job Tracker Platform",
     description: "A comprehensive job application tracking system built with Django.",
     longDescription:
       "A full-featured job application tracking platform that helps users manage their job search process. Built with Django, featuring real-time updates and analytics.",
@@ -39,13 +39,13 @@ export default function Page() {
 
   const comingSoonProjects = [
     {
-      title: "Language Learning App",
+      title: "Prava - English Language Learning App",
       description: "An interactive language learning platform with gamified lessons and progress tracking.",
       longDescription:
         "A comprehensive language learning application featuring interactive lessons, vocabulary building, pronunciation practice, and progress tracking. Built with Django backend and modern JavaScript frontend with gamification elements.",
       image: "/placeholder.svg?height=400&width=600",
       screenshots: ["/placeholder.svg?height=300&width=500", "/placeholder.svg?height=300&width=500"],
-      githubUrl: "https://github.com/itsflaviiftw/language-learning",
+      githubUrl: "https://github.com/itsflaviiftw/english-web",
       tags: ["Django", "JavaScript", "TailwindCSS", "MySQL"],
       challenges: [
         "Implementing spaced repetition algorithms for vocabulary retention",
@@ -134,7 +134,7 @@ export default function Page() {
                 </p>
               </div>
               <div className="flex flex-wrap justify-center gap-4 animate-fade-in-up">
-                <Link href="https://github.com" target="_blank">
+                <Link href="https://github.com/ITsFlaviiFTW" target="_blank">
                   <Button
                     variant="outline"
                     size="icon"
@@ -144,7 +144,7 @@ export default function Page() {
                     <span className="sr-only">GitHub</span>
                   </Button>
                 </Link>
-                <Link href="https://linkedin.com" target="_blank">
+                <Link href="https://www.linkedin.com/in/flavius-porumbiel/" target="_blank">
                   <Button
                     variant="outline"
                     size="icon"
@@ -154,17 +154,7 @@ export default function Page() {
                     <span className="sr-only">LinkedIn</span>
                   </Button>
                 </Link>
-                <Link href="https://twitter.com" target="_blank">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="hover:scale-110 hover:rotate-12 transform transition-all duration-300 bg-white/5 border-white/10 text-white hover:bg-white/10"
-                  >
-                    <Twitter className="h-4 w-4" />
-                    <span className="sr-only">Twitter</span>
-                  </Button>
-                </Link>
-                <Link href="mailto:hello@flavstudios.dev">
+                <Link href="mailto:flaviusporumbiel@gmail.com">
                   <Button
                     variant="outline"
                     size="icon"
@@ -222,7 +212,7 @@ export default function Page() {
 
       <footer className="border-t border-white/5 bg-black/20">
         <div className="container mx-auto flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6">
-          <p className="text-xs text-white/60">© 2024 flavstudios.dev. All rights reserved.</p>
+          <p className="text-xs text-white/60">© 2025 flavstudios.dev. All rights reserved.</p>
           <nav className="sm:ml-auto flex gap-4 sm:gap-6">
             <Link className="text-xs hover:underline underline-offset-4 text-white/60 hover:text-white/80" href="#">
               Terms of Service
