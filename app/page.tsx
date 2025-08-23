@@ -9,6 +9,8 @@ import { ThemeToggle } from "@/components/theme-toggle"
 import FloatingElements from "./components/floating-elements"
 import StatsSection from "./components/stats-section"
 import MobileNav from "./components/mobile-nav"
+import { ExternalLink } from "lucide-react";
+
 
 export default function Page() {
   const featuredProject = {
@@ -46,7 +48,7 @@ export default function Page() {
       image: "/placeholder.svg?height=400&width=600",
       screenshots: ["/placeholder.svg?height=300&width=500", "/placeholder.svg?height=300&width=500"],
       githubUrl: "https://github.com/itsflaviiftw/english-web",
-      tags: ["Django", "JavaScript", "TailwindCSS", "MySQL"],
+      tags: ["React", "JavaScript", "TailwindCSS", "MySQL"],
       challenges: [
         "Implementing spaced repetition algorithms for vocabulary retention",
         "Creating interactive pronunciation assessment features",
@@ -105,17 +107,28 @@ export default function Page() {
                 Contact
               </Link>
             </nav>
-          </div>
           <div className="ml-auto flex items-center space-x-2">
             <ThemeToggle />
+
             <Button
+              asChild
               variant="outline"
               className="hidden sm:inline-flex hover:scale-105 transform transition-all duration-200 bg-white/5 border-white/10 text-white hover:bg-white/10"
             >
-              Resume
+              <a
+                href="/resume/FlaviusPorumbiel_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Open résumé PDF in a new tab"
+              >
+                <ExternalLink className="mr-2 h-4 w-4" />
+                Resume
+              </a>
             </Button>
+
             <MobileNav />
           </div>
+        </div>
         </div>
       </header>
 
