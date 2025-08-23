@@ -107,25 +107,22 @@ export default function Page() {
                 Contact
               </Link>
             </nav>
-          <div className="ml-auto flex items-center space-x-2">
-            <ThemeToggle />
-
+            <div className="ml-auto flex items-center space-x-2">
+              <ThemeToggle />
             <Button
               asChild
               variant="outline"
-              className="hidden sm:inline-flex hover:scale-105 transform transition-all duration-200 bg-white/5 border-white/10 text-white hover:bg-white/10"
+              className="inline-flex hover:scale-105 transform transition-all duration-200 bg-white/5 border-white/10 text-white hover:bg-white/10"
             >
               <a
                 href="/resume/FlaviusPorumbiel_Resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="Open résumé PDF in a new tab"
               >
                 <ExternalLink className="mr-2 h-4 w-4" />
                 Resume
               </a>
             </Button>
-
             <MobileNav />
           </div>
         </div>
